@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure Payment | ASKART</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="payment-body">
+   
+
+    <div class="rupee-bg">
+
+  <!-- LEFT SIDE -->
+  <span class="rupee large"  style="left:5%;  animation-duration:22s;">₹</span>
+  <span class="rupee medium" style="left:10%; animation-duration:28s;">₹</span>
+  <span class="rupee small"  style="left:15%; animation-duration:34s;">₹</span>
+
+  <!-- CENTER LEFT -->
+  <span class="rupee medium" style="left:30%; animation-duration:26s;">₹</span>
+  <span class="rupee large"  style="left:35%; animation-duration:32s;">₹</span>
+  <span class="rupee large gold" style="left:35%; animation-duration:30s;">₹</span>
+
+
+  <!-- CENTER RIGHT -->
+  <span class="rupee small"  style="left:55%; animation-duration:30s;">₹</span>
+  <span class="rupee medium" style="left:60%; animation-duration:36s;">₹</span>
+
+  <!-- RIGHT SIDE -->
+  <span class="rupee large"  style="left:75%; animation-duration:24s;">₹</span>
+  <span class="rupee medium" style="left:85%; animation-duration:30s;">₹</span>
+  <span class="rupee small"  style="left:92%; animation-duration:38s;">₹</span>
+
+</div>
+
+
+
+  <section class="payment-box">
+     <button class="back-btn" onclick="goBack()">← Back</button>
+
+    <!-- ASKART BRAND -->
+    <div class="brand">
+      <h1>ASKART</h1>
+      <p>Secure & Fast Payments</p>
+    </div>
+
+    <h2>Choose Payment Method</h2>
+
+    <p class="pay-amount">
+      Total Payable: ₹<span id="amount"></span>
+    </p>
+
+    <div class="payment-options">
+
+      <label class="pay-card">
+        <input type="radio" name="payment" checked />
+        <span>💳 Credit / Debit Card</span>
+      </label>
+
+      <label class="pay-card">
+        <input type="radio" name="payment" />
+        <span>📱 UPI (GPay / PhonePe / Paytm)</span>
+      </label>
+
+      <label class="pay-card">
+        <input type="radio" name="payment" />
+        <span>🏦 Net Banking</span>
+      </label>
+
+      <label class="pay-card">
+        <input type="radio" name="payment" />
+        <span>💵 Cash on Delivery</span>
+      </label>
+
+    </div>
+
+    <button class="pay-now-btn" onclick="confirmOrder()">
+      🔒 Pay Securely
+    </button>
+
+    <p class="trust-text">
+      🔐 100% Secure Payments | Powered by ASKART
+    </p>
+
+  </section>
+
+  <script>
+  // Amount show
+  const params = new URLSearchParams(window.location.search);
+  const amount = params.get("amount") || 0;
+  document.getElementById("amount").innerText = amount;
+
+  function confirmOrder() {
+    const email = localStorage.getItem("email");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (!email) {
+      alert("❌ Session expired. Please login again.");
+      window.location.href = "login.html";
+      return;
+    }
+
+    if (cart.length === 0) {
+      alert("❌ Cart is empty");
+      return;
+    }
+
+    fetch("http://localhost:3000/place-order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email,
+        cart: cart,
+        totalAmount: amount
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert("✅ Order Placed Successfully!");
+      localStorage.removeItem("cart"); // clear cart
+      // window.location.href = "success.html";
+    })
+    .catch(error => {
+      console.error(error);
+      alert("❌ Order failed. Please try again.");
+    });
+  }
+
+  function goBack() {
+    window.history.back();
+  }
+</script>
+
+
+
+</body>
+</html>

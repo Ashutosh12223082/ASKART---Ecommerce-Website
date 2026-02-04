@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart - ASKART</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">ASKART 🛒</div>
+
+  <div class="nav-buttons" id="authArea">
+    <a href="products.html" class="btn btn-outline">Back</a>
+
+    <a href="cart.html" class="btn btn-cart">
+      Cart <span id="cartCount"></span>
+    </a>
+  </div>
+</header>
+
+
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>Your Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <hr style="margin:20px 0;">
+
+    <div style="font-weight:bold; margin-bottom:20px;">
+      Total
+      <span style="float:right;">₹<span id="totalPrice">0</span></span>
+    </div>
+
+    <a href="checkout.html">
+      <button class="btn btn-primary">Proceed to Checkout</button>
+    </a>
+  </div>
+</div>
+
+
+<script>
+/* ================= CART PAGE LOGIC ================= */
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const cartItemsDiv = document.getElementById("cartItems");
+const totalPriceEl = document.getElementById("totalPrice");
+
+function renderCart() {
+  cartItemsDiv.innerHTML = "";
+  let total = 0;
+
+  if (cart.length === 0) {
+  cartItemsDiv.innerHTML = `
+    <p style="text-align:center; padding:20px;">
+      Your cart is empty 🛒
+    </p>
+  `;
+  totalPriceEl.innerText = "0";
+
+  localStorage.setItem("cart", JSON.stringify([])); // 🔥 FIX
+  return;
+}
+
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+
+    cartItemsDiv.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}">
+        
+        <div class="cart-info">
+          <h4>${item.name}</h4>
+          <p>₹${item.price}</p>
+
+          <div class="qty">
+            <button onclick="changeQty(${index}, -1)">−</button>
+            <span>${item.qty}</span>
+            <button onclick="changeQty(${index}, 1)">+</button>
+          </div>
+        </div>
+
+        <button class="remove" onclick="removeItem(${index})">✕</button>
+      </div>
+    `;
+  });
+
+  totalPriceEl.innerText = total;
+  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("totalPrice", total);
+
+}
+
+function changeQty(index, delta) {
+  cart[index].qty += delta;
+
+  if (cart[index].qty <= 0) {
+    cart.splice(index, 1);
+  }
+
+  renderCart();
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  renderCart();
+}
+
+/* page load */
+renderCart();
+</script>
+
+</body>
+</html>

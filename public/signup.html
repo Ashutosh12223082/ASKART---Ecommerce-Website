@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup - ASKART</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">ASKART 🛒</div>
+</header>
+
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>Create Account</h2>
+
+    <input type="text" id="name" placeholder="Username">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+<button type="button" class="btn btn-primary" onclick="signup()">
+  Create Account
+</button>
+
+
+
+    <p class="auth-text">
+      Already have an account? <a href="login.html">Login</a>
+    </p>
+  </div>
+</div>
+
+<script>
+function signup() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (!name || !email || !password) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  fetch("/api/auth/signup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ name, email, password })
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert(data.message);
+    if (data.message === "Signup successful") {
+      window.location.href = "login.html";
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Something went wrong");
+  });
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products - ASKART</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+
+<!-- HEADER -->
+<header class="navbar">
+  <div class="logo">ASKART 🛒</div>
+
+  <div class="nav-right">
+    <!-- USER + CART (JS se inject hota hai) -->
+    <div class="nav-buttons" id="authArea">
+      <a href="cart.html" class="btn btn-cart">
+        Cart <span id="cartCount"></span>
+      </a>
+    </div>
+
+    <!-- BACK BUTTON (secondary action) -->
+    <a href="index.html" class="back-btn">← Home</a>
+  </div>
+</header>
+
+
+
+
+
+<!-- ELECTRONICS -->
+<section class="section" id="electronics">
+  <div class="container">
+    <h2 class="section-title">Electronics</h2>
+    <div class="products">
+      <div class="card">
+  <img src="images/electronics/wireless.jpg" alt="Wireless Headphones">
+  <h3>Wireless Headphones</h3>
+  <p>₹1999</p>
+  <button onclick="addToCart('Wireless Headphones', 1999, 'images/electronics/wireless.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/electronics/bluetoothspeaker.jpg" alt="Bluetooth Speaker">
+  <h3>Bluetooth Speaker</h3>
+  <p>₹1499</p>
+  <button onclick="addToCart('Bluetooth Speaker', 1499, 'images/electronics/bluetoothspeaker.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/electronics/stick.jpg" alt="Smart TV Stick">
+  <h3>Smart TV Stick</h3>
+  <p>₹3499</p>
+  <button onclick="addToCart('Smart TV Stick', 3499, 'images/electronics/stick.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/electronics/power.jpg" alt="Power Bank 20000mAh">
+  <h3>Power Bank 20000mAh</h3>
+  <p>₹2199</p>
+  <button onclick="addToCart('Power Bank 20000mAh', 2199, 'images/electronics/power.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/electronics/ctype.jpg" alt="USB-C Charger">
+  <h3>USB-C Charger</h3>
+  <p>₹899</p>
+  <button onclick="addToCart('USB-C Charger', 899, 'images/electronics/ctype.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/electronics/bluetooth.jpg" alt="Wireless Earbuds">
+  <h3>Wireless Earbuds</h3>
+  <p>₹2499</p>
+  <button onclick="addToCart('Wireless Earbuds', 2499, 'images/electronics/bluetooth.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/electronics/webcame.jpg" alt="Webcam HD">
+  <h3>Webcam HD</h3>
+  <p>₹1899</p>
+  <button onclick="addToCart('Webcam HD', 1899, 'images/electronics/webcame.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/electronics/keyboard.jpg" alt="Bluetooth Keyboard">
+  <h3>Bluetooth Keyboard</h3>
+  <p>₹1799</p>
+  <button onclick="addToCart('Bluetooth Keyboard', 1799, 'images/electronics/keyboard.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/electronics/mouse.jpg" alt="Gaming Mouse">
+  <h3>Gaming Mouse</h3>
+  <p>₹999</p>
+  <button onclick="addToCart('Gaming Mouse', 999, 'images/electronics/mouse.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/electronics/portablessd.jpg" alt="Portable SSD 1TB">
+  <h3>Portable SSD 1TB</h3>
+  <p>₹7999</p>
+  <button onclick="addToCart('Portable SSD 1TB', 7999, 'images/electronics/portablessd.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FASHION -->
+<section class="section" id="fashion">
+  <div class="container">
+    <h2 class="section-title">Fashion</h2>
+    <div class="products">
+      <div class="card">
+  <img src="images/fashion/runshoes.jpg" alt="Running Shoes">
+  <h3>Running Shoes</h3>
+  <p>₹2499</p>
+  <button onclick="addToCart('Running Shoes', 2499, 'images/fashion/runshoes.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/fashion/sneaker.jpg" alt="Casual Sneakers">
+  <h3>Casual Sneakers</h3>
+  <p>₹2199</p>
+  <button onclick="addToCart('Casual Sneakers', 2199, 'images/fashion/sneaker.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/fashion/tshirt.jpg" alt="Men T-Shirt">
+  <h3>Men T-Shirt</h3>
+  <p>₹799</p>
+  <button onclick="addToCart('Men T-Shirt', 799, 'images/fashion/tshirt.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/fashion/kurti.jpg" alt="Women Kurti">
+  <h3>Women Kurti</h3>
+  <p>₹1299</p>
+  <button onclick="addToCart('Women Kurti', 1299, 'images/fashion/kurti.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/fashion/jeans.jpg" alt="Jeans">
+  <h3>Jeans</h3>
+  <p>₹1599</p>
+  <button onclick="addToCart('Jeans', 1599, 'images/fashion/jeans.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/fashion/jacket.jpg" alt="Jacket">
+  <h3>Jacket</h3>
+  <p>₹2999</p>
+  <button onclick="addToCart('Jacket', 2999, 'images/fashion/jacket.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/fashion/ss.jpg" alt="Sports Shorts">
+  <h3>Sports Shorts</h3>
+  <p>₹699</p>
+  <button onclick="addToCart('Sports Shorts', 699, 'images/fashion/ss.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/fashion/hoddie.jpg" alt="Hoodie">
+  <h3>Hoodie</h3>
+  <p>₹1999</p>
+  <button onclick="addToCart('Hoodie', 1999, 'images/fashion/hoddie.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/fashion/cap.jpg" alt="Cap">
+  <h3>Cap</h3>
+  <p>₹499</p>
+  <button onclick="addToCart('Cap', 499, 'images/fashion/cap.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/fashion/socks.jpg" alt="Socks Pack">
+  <h3>Socks Pack</h3>
+  <p>₹399</p>
+  <button onclick="addToCart('Socks Pack', 399, 'images/fashion/socks.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACCESSORIES -->
+<section class="section"  id="accessories">
+  <div class="container">
+    <h2 class="section-title">Accessories</h2>
+    <div class="products">
+      <div class="card">
+  <img src="images/accessories/laptopbackpack.jpg">
+  <h3>Laptop Backpack</h3>
+  <p>₹1299</p>
+  <button onclick="addToCart('Laptop Backpack', 1299, 'images/accessories/laptopbackpack.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/accessories/sling.jpg">
+  <h3>Sling Bag</h3>
+  <p>₹899</p>
+  <button onclick="addToCart('Sling Bag', 899, 'images/accessories/sling.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/accessories/wallet.jpg">
+  <h3>Wallet</h3>
+  <p>₹699</p>
+  <button onclick="addToCart('Wallet', 699, 'images/accessories/wallet.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/accessories/sg.jpg">
+  <h3>Sunglasses</h3>
+  <p>₹1499</p>
+  <button onclick="addToCart('Sunglasses', 1499, 'images/accessories/sg.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/accessories/belts.jpg">
+  <h3>Belts</h3>
+  <p>₹599</p>
+  <button onclick="addToCart('Belts', 599, 'images/accessories/belts.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/accessories/kc.jpg">
+  <h3>Keychain</h3>
+  <p>₹299</p>
+  <button onclick="addToCart('Keychain', 299, 'images/accessories/kc.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/accessories/tp.jpg">
+  <h3>Travel Pouch</h3>
+  <p>₹499</p>
+  <button onclick="addToCart('Travel Pouch', 499, 'images/accessories/tp.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/accessories/ls.jpg">
+  <h3>Laptop Sleeve</h3>
+  <p>₹999</p>
+  <button onclick="addToCart('Laptop Sleeve', 999, 'images/accessories/ls.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/accessories/pc.jpg">
+  <h3>Phone Cover</h3>
+  <p>₹399</p>
+  <button onclick="addToCart('Phone Cover', 399, 'images/accessories/pc.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/accessories/co.jpg">
+  <h3>Cable Organizer</h3>
+  <p>₹349</p>
+  <button onclick="addToCart('Cable Organizer', 349, 'images/accessories/co.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WEARABLES -->
+<section class="section" id="wearables">
+  <div class="container">
+    <h2 class="section-title">Wearables</h2>
+    <div class="products">
+      <div class="card">
+  <img src="images/wearables/smart.jpg">
+  <h3>Smart Watch</h3>
+  <p>₹2999</p>
+  <button onclick="addToCart('Smart Watch', 2999, 'images/electronics/wireless.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/wearables/fb.jpg">
+  <h3>Fitness Band</h3>
+  <p>₹1999</p>
+  <button onclick="addToCart('Fitness Band', 1999, 'images/electronics/wireless.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/wearables/analog.jpg">
+  <h3>Analog Watch</h3>
+  <p>₹2499</p>
+  <button onclick="addToCart('Analog Watch', 2499, 'images/electronics/wireless.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/wearables/dgwatch.jpg">
+  <h3>Digital Watch</h3>
+  <p>₹1799</p>
+  <button onclick="addToCart('Digital Watch', 1799, 'images/electronics/wireless.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/wearables/kdw.jpg">
+  <h3>Kids Smart Watch</h3>
+  <p>₹1599</p>
+  <button onclick="addToCart('Kids Smart Watch', 1599, 'images/electronics/wireless.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/wearables/luxw.jpg">
+  <h3>Luxury Watch</h3>
+  <p>₹8999</p>
+  <button onclick="addToCart('Luxury Watch', 8999, 'images/electronics/wireless.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/wearables/hlth.jpg">
+  <h3>Health Tracker</h3>
+  <p>₹2299</p>
+  <button onclick="addToCart('Health Tracker', 2299, 'images/electronics/wireless.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/wearables/sw.jpg">
+  <h3>Sport Watch</h3>
+  <p>₹2799</p>
+  <button onclick="addToCart('Sport Watch', 2799, 'images/electronics/wireless.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/wearables/ms.jpg">
+  <h3>Metal Strap Watch</h3>
+  <p>₹3499</p>
+  <button onclick="addToCart('Metal Strap Watch', 3499, 'images/electronics/wireless.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+<div class="card">
+  <img src="images/wearables/sl.jpg">
+  <h3>Silicone Strap Watch</h3>
+  <p>₹1999</p>
+  <button onclick="addToCart('Silicone Strap Watch', 1999, 'images/electronics/wireless.jpg')">
+    Add to Cart
+  </button>
+</div>
+
+  </div>
+</section>
+ <script>
+/* ---------------- USER AUTH UI ---------------- */
+const username = localStorage.getItem("username");
+const authArea = document.getElementById("authArea");
+
+if (username && authArea) {
+  authArea.innerHTML = `
+    <div class="user-profile">
+      <div class="user-avatar">${username.charAt(0).toUpperCase()}</div>
+      <span class="user-name">${username}</span>
+      <a href="cart.html" class="btn btn-cart">
+        Cart <span id="cartCount"></span>
+      </a>
+      <button onclick="logout()" class="btn btn-logout">Logout</button>
+    </div>
+  `;
+}
+
+
+function logout() {
+  localStorage.clear();
+  window.location.href = "login.html";
+}
+
+/* ---------------- CART LOGIC ---------------- */
+function addToCart(name, price, image) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existing = cart.find(item => item.name === name);
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({
+      name,
+      price,
+      image,
+      qty: 1
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  alert(name + " added to cart 🛒");
+
+}
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let totalItems = 0;
+  cart.forEach(item => {
+    totalItems += item.qty;
+  });
+
+  const cartCount = document.getElementById("cartCount");
+  if (cartCount) {
+    cartCount.innerText = totalItems > 0 ? `(${totalItems})` : "";
+  }
+}
+  updateCartCount();
+
+</script>
+
+
+
+</body>
+</html>

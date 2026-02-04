@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ASKART</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">ASKART 🛒</div>
+
+  <div class="nav-buttons" id="authArea">
+    <a href="login.html" class="btn btn-outline">Login</a>
+    <a href="signup.html" class="btn btn-primary">Signup</a>
+
+    <a href="cart.html" class="btn btn-cart">
+      Cart <span id="cartCount"></span>
+    </a>
+  </div>
+</header>
+
+
+<!-- ✅ HERO SECTION (TOP) -->
+<section class="hero">
+  
+  <h1 class="hero-title blink-text">
+    <span>S</span><span>h</span><span>o</span><span>p</span>
+    <span> </span>
+    <span>S</span><span>m</span><span>a</span><span>r</span><span>t</span>
+    <span> </span>
+    <span>w</span><span>i</span><span>t</span><span>h</span>
+    <span> </span>
+    <span>A</span><span>S</span><span>K</span><span>A</span><span>R</span><span>T</span>
+  </h1>
+
+  <p>Best products • Best prices • Fast delivery</p>
+
+  <a href="products.html" class="cta-btn">
+    Start Shopping
+  </a>
+
+</section>
+
+
+<!-- <section class="home-bg"> -->
+<section class="offers">
+  <div class="offer-card">
+    🔥 Flat 30% OFF on Electronics
+  </div>
+  <div class="offer-card">
+    🎉 Buy 1 Get 1 on Accessories
+  </div>
+  <div class="offer-card">
+    🚚 Free Delivery on Orders above ₹999
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Shop by Category</h2>
+
+  <div class="categories">
+
+  <a href="products.html#electronics" class="category-link">
+    <div class="category-card">🎧 Electronics</div>
+  </a>
+
+  <a href="products.html#fashion" class="category-link">
+    <div class="category-card">👟 Fashion</div>
+  </a>
+
+  <a href="products.html#accessories" class="category-link">
+    <div class="category-card">🎒 Accessories</div>
+  </a>
+
+  <a href="products.html#wearables" class="category-link">
+    <div class="category-card">⌚ Wearables</div>
+  </a>
+
+  </div>
+</div>
+</section>
+<!-- </section> -->
+
+
+<!-- ✅ FEATURED PRODUCTS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Featured Products</h2>
+
+<div class="products">
+
+  <div class="card">
+    <img src="images/electronics/wireless.jpg" alt="Wireless Headphones">
+    <h3>Wireless Headphones</h3>
+    <p>Price: ₹1999</p>
+    <button onclick="addToCart(
+      'Wireless Headphones',
+      1999,
+      'images/electronics/wireless.jpg'
+    )">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="card">
+    <img src="images/electronics/smart.jpg" alt="Smart Watch">
+    <h3>Smart Watch</h3>
+    <p>Price: ₹2999</p>
+    <button onclick="addToCart(
+      'Smart Watch',
+      2999,
+      'images/electronics/wireless.jpg'
+    )">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="card">
+    <img src="images/electronics/runshoes.jpg" alt="Running Shoes">
+    <h3>Running Shoes</h3>
+    <p>Price: ₹2499</p>
+    <button onclick="addToCart(
+      'Running Shoes',
+      2499,
+      'images/electronics/wireless.jpg'
+    )">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="card">
+    <img src="images/electronics/bluetoothspeaker.jpg" alt="Bluetooth Speaker">
+    <h3>Bluetooth Speaker</h3>
+    <p>Price: ₹1499</p>
+    <button onclick="addToCart(
+      'Bluetooth Speaker',
+      1499,
+      'images/electronics/wireless.jpg'
+    )">
+      Add to Cart
+    </button>
+  </div>
+
+</div>
+
+</section>
+
+<script>
+/* ---------------- USER AUTH UI ---------------- */
+const username = localStorage.getItem("username");
+const authArea = document.getElementById("authArea");
+
+if (username && authArea) {
+  authArea.innerHTML = `
+    <div class="user-profile">
+      <div class="user-avatar">${username.charAt(0).toUpperCase()}</div>
+      <span class="user-name">${username}</span>
+      <a href="cart.html" class="btn btn-cart">
+        Cart <span id="cartCount"></span>
+      </a>
+      <button onclick="logout()" class="btn btn-logout">Logout</button>
+    </div>
+  `;
+}
+
+
+function logout() {
+  localStorage.clear();
+  window.location.href = "login.html";
+}
+
+/* ---------------- CART LOGIC ---------------- */
+function addToCart(name, price, image) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existing = cart.find(item => item.name === name);
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({
+      name,
+      price,
+      image,
+      qty: 1
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  alert(name + " added to cart 🛒");
+
+}
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let totalItems = 0;
+  cart.forEach(item => {
+    totalItems += item.qty;
+  });
+
+  const cartCount = document.getElementById("cartCount");
+  if (cartCount) {
+    cartCount.innerText = totalItems > 0 ? `(${totalItems})` : "";
+  }
+}
+  updateCartCount();
+
+</script>
+
+
+</body>
+</html>
+<!-- Footer Start -->
+<footer class="askart-footer">
+  <div class="footer-content">
+    <h3>About Askart</h3>
+    <p>
+      Askart is a modern online shopping platform that provides quality products
+      at affordable prices with a smooth and secure shopping experience.
+    </p>
+
+    <p class="developer">
+      Developed by <span>..Ashutosh..</span>
+    </p>
+
+    <p class="copyright">
+      © 2026 Askart. All Rights Reserved.
+    </p>
+  </div>
+</footer>
+<!-- Footer End -->
+

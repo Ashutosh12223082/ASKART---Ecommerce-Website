@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout - ASKART</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">ASKART 🛒</div>
+</header>
+
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>Checkout</h2>
+
+    <input type="text" placeholder="Full Name">
+    <input type="text" placeholder="Address">
+    <input type="text" placeholder="City">
+    <input type="text" placeholder="Pincode">
+    <input type="text" placeholder="Phone Number">
+
+    <hr style="margin:20px 0;">
+
+    <div style="font-weight:bold; margin-bottom:20px;">
+      Total Amount
+      <span style="float:right;">₹2898</span>
+    </div>
+
+    <button class="btn btn-primary" onclick="goToPayment()">
+     Place Order
+    </button>
+
+
+    <p class="auth-text">
+      <a href="cart.html">← Back to Cart</a>
+    </p>
+  </div>
+</div>
+<script>
+  const username = localStorage.getItem("username");
+  const authArea = document.getElementById("authArea");
+
+  if (username) {
+    authArea.innerHTML = `
+  <div class="user-profile">
+    <div class="user-avatar">
+      ${username.charAt(0).toUpperCase()}
+    </div>
+
+    <span class="user-name">${username}</span>
+
+    <a href="cart.html" class="btn btn-cart">Cart</a>
+
+    <button onclick="logout()" class="btn btn-logout">Logout</button>
+  </div>
+`;
+  }
+
+  function logout() {
+    localStorage.clear();
+    window.location.href = "login.html";
+  }
+
+  function goToPayment() {
+    const totalAmount = localStorage.getItem("totalPrice") || 1499;
+    window.location.href = "payment.html?amount=" + totalAmount;
+  }
+</script>
+
+</body>
+</html>
