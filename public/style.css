@@ -936,37 +936,56 @@ html {
 }
 
 
-/* Mobile Only - All Sections 3 Column */
+/* Mobile Only - Selected Sections 3 Column */
 @media (max-width: 480px) {
 
-  .section .products {
+  #electronics .products,
+  #fashion .products,
+  #accessories .products,
+  #wearables .products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
 
-  .section .card {
+  #electronics .card,
+  #fashion .card,
+  #accessories .card,
+  #wearables .card {
     padding: 6px;
   }
 
-  .section .card img {
+  #electronics .card img,
+  #fashion .card img,
+  #accessories .card img,
+  #wearables .card img {
     height: 85px;
     object-fit: cover;
   }
 
-  .section .card h3 {
+  #electronics .card h3,
+  #fashion .card h3,
+  #accessories .card h3,
+  #wearables .card h3 {
     font-size: 11px;
   }
 
-  .section .card p {
+  #electronics .card p,
+  #fashion .card p,
+  #accessories .card p,
+  #wearables .card p {
     font-size: 10px;
   }
 
-  .section .card button {
+  #electronics .card button,
+  #fashion .card button,
+  #accessories .card button,
+  #wearables .card button {
     font-size: 9px;
     padding: 3px 5px;
   }
 
 }
+
 
 
