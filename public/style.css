@@ -157,12 +157,12 @@ button:hover {
 
 @media (max-width: 600px) {
 
-  /* Home page untouched rahe */
-  #home .products {
+  /* Home page ke liye 2 column */
+  body:not(.products-page) .products {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Sirf ye sections 3 column hon */
+  /* Products.html ke sab sections 3 column */
   #electronics .products,
   #fashion .products,
   #accessories .products,
@@ -171,6 +171,7 @@ button:hover {
   }
 
 }
+
 
 
 
@@ -955,7 +956,7 @@ html {
 
 
 /* ===== MOBILE 3 COLUMN FIX ===== */
-@media only screen and (max-width: 480px) {
+/* @media only screen and (max-width: 480px) {
 
   #electronics .products,
   #fashion .products,
@@ -967,21 +968,7 @@ html {
     gap: 8px !important;
   }
 
-}
-/* ===== MOBILE 3 COLUMN FIX ===== */
-@media only screen and (max-width: 480px) {
-
-  #electronics .products,
-  #fashion .products,
-  #accessories .products,
-  #wearables .products {
-
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 8px !important;
-  }
-
-}
+} */
 
 
 
