@@ -151,7 +151,22 @@ button:hover {
 
 
 
+/* @media (max-width: 600px) {
 
+  /* Home page ke liye 2 column */
+  body:not(.products-page) .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Products.html ke sab sections 3 column */
+  #electronics .products,
+  #fashion .products,
+  #accessories .products,
+  #wearables .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+} */
 
 
 
