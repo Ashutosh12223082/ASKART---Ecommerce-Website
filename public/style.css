@@ -970,6 +970,56 @@ html {
 
 } */
 
+/* ===== Compact Mobile Navbar ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 6px 8px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  /* 🔥 Buttons container tight */
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 3px;   /* overall spacing kam */
+  }
+
+  /* 🔥 Username spacing control */
+  .nav-buttons span,
+  .nav-buttons .username {
+    margin: 0 4px;   /* akuu ke dono side gap control */
+    font-size: 13px;
+  }
+
+  .nav-buttons .btn {
+    font-size: 11px;
+    padding: 4px 6px;   /* left-right padding kam */
+  }
+
+  /* Cart extra tight */
+  .btn-cart {
+    padding: 4px 7px;
+  }
+
+  /* Avatar size + margin fix */
+  .nav-buttons img,
+  .nav-buttons .avatar {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    margin-right: 4px;
+  }
+
+}
+
+
+
+
+
 
 
 
