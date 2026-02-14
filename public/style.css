@@ -936,56 +936,35 @@ html {
 }
 
 
-/* Mobile Only - Selected Sections 3 Column */
-@media (max-width: 480px) {
+/* ===== MOBILE 3 COLUMN FIX ===== */
+@media only screen and (max-width: 480px) {
 
   #electronics .products,
   #fashion .products,
   #accessories .products,
   #wearables .products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
 
-  #electronics .card,
-  #fashion .card,
-  #accessories .card,
-  #wearables .card {
-    padding: 6px;
-  }
-
-  #electronics .card img,
-  #fashion .card img,
-  #accessories .card img,
-  #wearables .card img {
-    height: 85px;
-    object-fit: cover;
-  }
-
-  #electronics .card h3,
-  #fashion .card h3,
-  #accessories .card h3,
-  #wearables .card h3 {
-    font-size: 11px;
-  }
-
-  #electronics .card p,
-  #fashion .card p,
-  #accessories .card p,
-  #wearables .card p {
-    font-size: 10px;
-  }
-
-  #electronics .card button,
-  #fashion .card button,
-  #accessories .card button,
-  #wearables .card button {
-    font-size: 9px;
-    padding: 3px 5px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
   }
 
 }
+/* ===== MOBILE 3 COLUMN FIX ===== */
+@media only screen and (max-width: 480px) {
+
+  #electronics .products,
+  #fashion .products,
+  #accessories .products,
+  #wearables .products {
+
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+
+}
+
 
 
 
