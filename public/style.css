@@ -149,11 +149,29 @@ button:hover {
   }
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
   }
+} */
+
+@media (max-width: 600px) {
+
+  /* Home page untouched rahe */
+  #home .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Sirf ye sections 3 column hon */
+  #electronics .products,
+  #fashion .products,
+  #accessories .products,
+  #wearables .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
 }
+
 
 
 
