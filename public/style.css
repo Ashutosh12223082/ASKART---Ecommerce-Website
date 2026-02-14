@@ -1038,6 +1038,29 @@ html {
 }
 
 
+/* ===== PRODUCTS PAGE NAVBAR FIX ===== */
+
+.navbar {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between !important;
+}
+
+.nav-right {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* Agar back button upar ja raha ho */
+.back-btn {
+  position: static !important;
+}
 
 
 
