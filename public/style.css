@@ -936,5 +936,37 @@ html {
 }
 
 
+/* Mobile Only - All Sections 3 Column */
+@media (max-width: 480px) {
+
+  .section .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .section .card {
+    padding: 6px;
+  }
+
+  .section .card img {
+    height: 85px;
+    object-fit: cover;
+  }
+
+  .section .card h3 {
+    font-size: 11px;
+  }
+
+  .section .card p {
+    font-size: 10px;
+  }
+
+  .section .card button {
+    font-size: 9px;
+    padding: 3px 5px;
+  }
+
+}
 
 
