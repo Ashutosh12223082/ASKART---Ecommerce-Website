@@ -168,20 +168,35 @@ button:hover {
 
 /* } */ 
 
-/* ===== Default Laptop / Desktop ===== */
-.products {
+/* ===== INDEX PAGE (Laptop) ===== */
+.home-page .products {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* ===== Mobile ===== */
-@media only screen and (max-width: 768px) {
-  .products {
-    grid-template-columns: repeat(3, 1fr) !important;
+/* ===== INDEX PAGE (Mobile) ===== */
+@media (max-width: 768px) {
+  .home-page .products {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+
+
+/* Sirf products.html ke liye */
+.products-page .products {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .products-page .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 
 
